@@ -6,13 +6,13 @@ import allCharacters from './endpoints.js';
 // const characterId = 1;
 // const infoCharacters = getmarvelJson(characterId);
 
-fetch(allCharacters)
-  .then((response) => response.json())
-  .then((json) => {
-    json.data.results.map((item) => {
-      console.log(item);
-    });
-  });
+// fetch(allCharacters)
+//   .then((response) => response.json())
+//   .then((json) => {
+//     json.data.results.map((item) => {
+//       console.log(item);
+//     });
+//   });
 
 // infoCharacters.then((info) => {
 //   console.log(info);
@@ -20,5 +20,10 @@ fetch(allCharacters)
 
 const allInfo = JsonallCharacters();
 allInfo.then((info) => {
-  console.log(info);
+  const span = document.getElementById('span');
+  const p = document.createElement('p');
+  p.innerHTML = `
+  ${info.name}
+  `;
+  span.appendChild(p);
 });
